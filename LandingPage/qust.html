@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTIONNAIRE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script nomodule src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #2a5d9e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .questionnaire-container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .questionnaire-container h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .question-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid #3b82f6;
+        }
+        .question-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            border-left: 5px solid #2563eb;
+        }
+        .question-card h3 {
+            color: #333;
+        }
+        .question-card select, .question-card input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .checkbox-group label {
+            background: #f9f9f9;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #ddd;
+        }
+        .checkbox-group input[type="checkbox"] {
+            display: none;
+        }
+        .checkbox-group input[type="checkbox"]:checked + span {
+            font-weight: bold;
+            color: #2563eb;
+        }
+        .continue-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        .continue-btn:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div class="questionnaire-container">
+        <h2>QUESTIONNAIRE</h2>
+        <div class="question-card">
+            <h3>What is your monthly income?</h3>
+            <input type="number" id="income" placeholder="Enter amount in ₹">
+        </div>
+        <div class="question-card">
+            <h3>Select the categories you want to track:</h3>
+            <div class="checkbox-group">
+                <label><input type="checkbox" value="Savings"><span>Savings</span></label>
+                <label><input type="checkbox" value="Housing"><span>Housing (Rent/Mortgage)</span></label>
+                <label><input type="checkbox" value="Utilities"><span>Utilities (Electricity, Water, Internet)</span></label>
+                <label><input type="checkbox" value="Groceries"><span>Groceries</span></label>
+                <label><input type="checkbox" value="Transportation"><span>Transportation</span></label>
+                <label><input type="checkbox" value="Healthcare"><span>Healthcare & Insurance</span></label>
+                <label><input type="checkbox" value="Entertainment"><span>Entertainment & Leisure</span></label>
+                <label><input type="checkbox" value="Education"><span>Education</span></label>
+                <label><input type="checkbox" value="Debt"><span>Debt Repayment</span></label>
+                <label><input type="checkbox" value="Investments"><span>Investments & Savings</span></label>
+                <label><input type="checkbox" value="Miscellaneous"><span>Miscellaneous</span></label>
+            </div>
+        </div>
+        <div class="question-card">
+            <h3>Which category do you prioritize the most?</h3>
+            <select>
+                <option>Savings</option>
+                <option>Housing</option>
+                <option>Utilities</option>
+                <option>Groceries</option>
+                <option>Transportation</option>
+                <option>Healthcare & Insurance</option>
+                <option>Entertainment & Leisure</option>
+                <option>Education</option>
+                <option>Debt Repayment</option>
+                <option>Investments & Savings</option>
+                <option>Miscellaneous</option>
+            </select>
+        </div>
+        <button class="continue-btn" onclick="scrollToDashboard()">Complete your Profile</button>
+    </div>
+    
+    <script>
+        function scrollToDashboard() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            window.open("profile.html", "_blank");
+        }
+    </script>
+</body>
+</html>

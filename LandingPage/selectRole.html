@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role Selection</title>
+    
+    <!-- Import Poppins Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(130deg, #33006F, #4B0082, #03068f);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .role-selection {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .role-container {
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif; /* Poppins Font Applied */
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .roles {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .role-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            transform: scale(0.9);
+            opacity: 0.5;
+        }
+
+        .role-card:hover, .role-card.active {
+            transform: scale(1.1);
+            background: rgba(255, 255, 255, 0.3);
+            opacity: 1;
+        }
+
+        .role-icon {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+        .role-label {
+    text-decoration: none;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <div class="role-selection">
+        <div class="role-container">
+            <h2 class="title">Please Select Your Role</h2>
+            <p class="subtitle">
+                Choose your role to customize your experience. Students can track expenses, Businesses manage finances, and Employees organize salaries.
+            </p>
+            <div class="roles">
+                <div class="role-card" id="student" onmouseover="hoverRole('student')" onmouseout="hoverRole(null)" onclick="selectRole('Student')">
+                    <span class="role-icon" >🎓</span>
+                    <span  class="role-label stu">Student</span>
+                </div>
+                <div class="role-card" id="business" onmouseover="hoverRole('business')" onmouseout="hoverRole(null)" onclick="selectRole('Business')">
+                    <span class="role-icon">🏢</span>
+                    <span  class="role-label busi">Business</span>
+                </div>
+                <div class="role-card" id="employee" onmouseover="hoverRole('employee')" onmouseout="hoverRole(null)" onclick="selectRole('Employee')">
+                    <span class="role-icon">💼</span>
+                    <span class="role-label emp">Employee</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function hoverRole(role) {
+            document.querySelectorAll('.role-card').forEach(card => {
+                if (card.id === role) {
+                    card.classList.add('active');
+                } else {
+                    card.classList.remove('active');
+                }
+            });
+        }
+
+        function selectRole(role) {
+        localStorage.setItem("selectedRole", role); // Store selected role
+        window.location.href = "qust.html"; // Redirect to profile page
+    }
+    </script>
+</body>
+</html>
