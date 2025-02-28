@@ -11,4 +11,4 @@ Tania Biswas - AI/ML (Team Lead),
 Aritra Banerjee - Data Science (Dashboard),
 Sougata Sarkar - Full Stack Developer,
 Sudip Das - Front End Developer,
-Somya Ranjan Bhoi - UI/UX Designer,
+Somya Ranjan Bhoi - UI/UX Designer
