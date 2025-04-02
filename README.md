@@ -9,7 +9,9 @@ Our FinTech based Hackathon project
 <br>
 "FINGENIE : Automated Finnce Management System".
 <br>
+<br>
 Team Members:
+<br>
 <br>
 Tania Biswas - AI/ML (Team Lead),
 <br>
